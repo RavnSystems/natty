@@ -43,34 +43,21 @@
   
   <distributionManagement>
     <snapshotRepository>
-      <id>sonatype-nexus-snapshots</id>
-      <name>Sonatype Nexus Snapshots</name>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      <id>mavn.ravn.co.uk</id>
+      <name>mavn.ravn.co.uk-snapshots</name>
+      <url>https://mavn.ravn.co.uk/artifactory/ext-snapshots-local/</url>
     </snapshotRepository>
-    
+
     <repository>
-      <id>sonatype-nexus-staging</id>
-      <name>Nexus Release Repository</name>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+      <id>mavn.ravn.co.uk</id>
+      <name>mavn.ravn.co.uk-snapshots</name>
+      <url>https://mavn.ravn.co.uk/artifactory/ext-releases-local/</url>
     </repository>
   </distributionManagement>
   
   <build>
     <plugins>
-
-      <!-- automatically release to maven central without manual Sonatype promotion -->
-      <plugin>
-        <groupId>org.sonatype.plugins</groupId>
-        <artifactId>nexus-staging-maven-plugin</artifactId>
-        <version>1.6.7</version>
-        <extensions>true</extensions>
-        <configuration>
-          <serverId>ossrh</serverId>
-          <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-          <autoReleaseAfterClose>true</autoReleaseAfterClose>
-        </configuration>
-      </plugin>
-      
+        
       <!-- need to force a new version of the release plugin for git support-->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -184,22 +171,6 @@
       </activation>
       <build>
         <plugins>
-        
-          <!-- sign artifacts -->
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <version>1.6</version>
-            <executions>
-              <execution>
-                <id>sign-artifacts</id>
-                <phase>verify</phase>
-                <goals>
-                  <goal>sign</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
           
           <!-- generate javadoc.jar -->
           <plugin>
