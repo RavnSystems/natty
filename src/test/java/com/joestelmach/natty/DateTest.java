@@ -6,6 +6,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.text.DateFormat;
+import java.time.Year;
 import java.util.*;
 import java.util.Map.Entry;
 
@@ -37,6 +38,20 @@ public class DateTest extends AbstractTest {
     validateDate("28-Feb-2010", 2, 28, 2010);
     validateDate("9-Apr", 4, 9, Calendar.getInstance().get(Calendar.YEAR));
     validateDate("jan 10, '00", 1, 10, 2000);
+  }
+
+  @Test
+  public void testForeignDates() {
+    validateDate("10 januari 2010", 1, 10, 2010);
+    validateDate("8 set. '08", 9, 8, 2008);
+    validateDate("julio 13 '93", 7, 13, 1993);
+    validateDate("enero 4 2019", 1, 4, 2019);
+    validateDate("sierpień 2018", 8, 1, 2018);
+    validateDate("25 abr. 2018", 4, 25, 2018);
+    validateDate("18 avr. 2018", 4, 18, 2018);
+    validateDate("1/ott/2017", 10, 1, 2017);
+    validateDate("1/ott/2017", 10, 1, 2017);
+    validateDate("23 de Fev de 2018", 2, 23, 2018);
   }
   
   @Test

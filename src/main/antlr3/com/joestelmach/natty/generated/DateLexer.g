@@ -15,19 +15,19 @@ lexer grammar DateLexer;
 }
 
 // ********** date rules ********** 
-
-JANUARY   : 'january'   's'?  | 'jan' DOT?;
-FEBRUARY  : 'february'  's'?  | 'feb' DOT?;
-MARCH     : 'march'     'es'? | 'mar' DOT?;
-APRIL     : 'april'     's'?  | 'apr' DOT?;
-MAY       : 'may'       's'?;
-JUNE      : 'june'      's'?  | 'jun' DOT?;
-JULY      : 'july'      's'?  | 'jul' DOT?;
-AUGUST    : 'august'    's'?  | 'aug' DOT?;
-SEPTEMBER : 'september' 's'?  | 'sep' DOT? | 'sept' DOT?;
-OCTOBER   : 'october'   's'?  | 'oct' DOT?;
-NOVEMBER  : 'november'  's'?  | 'nov' DOT?;
-DECEMBER  : 'december'  's'?  | 'dec' DOT?;
+// Full and abbreviated (where applicable) month names for English, Dutch, Spanish, Finnish, French, Portugese, Swedish, Slovenian, German, Hungarian, Italian, Polish, Maltese, Norwegian, Swedish, Luxemburgish & Italian
+JANUARY   : 'january'   's'?  | 'januari'    | 'enero'     | 'tammikuu'  | 'janvier'   | 'janeiro'    | 'januar'     | 'január'      | 'gennaio'     | 'styczeń'    | 'jannar'     | 'ene' DOT?   | 'tammi' DOT?  | 'janv' DOT? | 'gen' DOT?  | 'jan' DOT?;
+FEBRUARY  : 'february'  's'?  | 'februari'   | 'febrero'   | 'helmikuu'  | 'février'   | 'fevereiro'  | 'februar'    | 'február'     | 'febbraio'    | 'luty'       | 'frar'       | 'helmi' DOT? | 'févr' DOT?   | 'fev' DOT?  | 'fra' DOT?  | 'feb' DOT?;
+MARCH     : 'march'     'es'? | 'maart'      | 'marzo'     | 'maaliskuu' | 'março'     | 'marec'      | 'märz'       | 'március'     | 'marzec'      | 'marzu'      | 'mäerz'      | 'mrt' DOT?   | 'maalis' DOT? | 'mars' DOT? | 'mrz' DOT?  | 'mar' DOT?;
+APRIL     : 'april'     's'?  | 'abril'      | 'huhtikuu'  | 'avril'     | 'április'   | 'aprile'     | 'kwiecień'   | 'abrëll'      | 'abr' DOT?    | 'huhti' DOT? | 'avr' DOT?   | 'apr' DOT?;
+MAY       : 'may'       's'?  | 'mayo'       | 'toukokuu'  | 'maio'      | 'május'     | 'maggio'     | 'mejju'      | 'mei' DOT?    | 'touko' DOT?  | 'mai' DOT?   | 'maj' DOT?   | 'mag' DOT?   | 'mej' DOT?    | 'mee' DOT?;
+JUNE      : 'june'      's'?  | 'junio'      | 'kesäkuu'   | 'junho'     | 'junij'     | 'június'     | 'giugno'     | 'czerwiec'    | 'ġunju'       | 'kesä' DOT?  | 'juin' DOT?  | 'giu' DOT?   | 'ġun' DOT?    | 'juni' DOT? | 'jun' DOT?;
+JULY      : 'july'      's'?  | 'julio'      | 'heinäkuu'  | 'juillet'   | 'julho'     | 'julij'      | 'július'     | 'luglio'      | 'lipiec'      | 'lulju'      | 'heinä' DOT? | 'juil' DOT?  | 'lug' DOT?    | 'lul' DOT?  | 'juli' DOT? | 'jul' DOT?;
+AUGUST    : 'august'    's'?  | 'augustus'   | 'agosto'    | 'elokuu'    | 'augusti'   | 'avgust'     |'augusztus'   | 'sierpień'    | 'awwissu'     | 'elo' DOT?   | 'août' DOT?  | 'avg' DOT?   | 'aww' DOT?    | 'aug' DOT?;
+SEPTEMBER : 'september' 's'?  | 'septiembre' | 'syyskuu'   | 'septembre' | 'setembro'  | 'szeptember' | 'settembre'  | 'wrzesień'    | 'settembru'   | 'syys' DOT?  | 'set' DOT?   | 'sep' DOT?   | 'sept' DOT?;
+OCTOBER   : 'october'   's'?  | 'oktober'    | 'octubre'   | 'lokakuu'   | 'octobre'   | 'outubro'    | 'október'    | 'ottobre'     | 'październik' | 'ottubru'    | 'okt' DOT?   | 'loka' DOT?  | 'out' DOT?    | 'ott' DOT?  | 'oct' DOT?;
+NOVEMBER  : 'november'  's'?  | 'noviembre'  | 'marraskuu' | 'novembre'  | 'novembro'  | 'listopad'   | 'novembru'   | 'marras' DOT? | 'nov' DOT?;
+DECEMBER  : 'december'  's'?  | 'diciembre'  | 'joulukuu'  | 'décembre'  | 'dezembro'  | 'dezember'   | 'dicembre'   | 'grudzień'    | 'diċembru'    | 'desember'   | 'dic' DOT?   | 'joulu' DOT? | 'déc' DOT?    | 'dez' DOT?  | 'diċ' DOT?  | 'des' DOT? | 'dec' DOT?;
   
 SUNDAY    : 'sunday'    's'?  | 'sun' DOT?  | 'suns' DOT?;
 MONDAY    : 'monday'    's'?  | 'mon' DOT?  | 'mons' DOT?;
@@ -262,7 +262,7 @@ AND       : 'and';
 TO        : 'to';
 THROUGH   : 'through';
 ON        : 'on';
-OF        : 'of';
+OF        : 'of' | 'de';
 THIS      : 'this';
 THAT      : 'that';
 LAST      : 'last' | 'final';
